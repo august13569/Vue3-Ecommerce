@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container my-4">
     <div class="row">
       <div class="col-lg-8 offset-lg-2 col-10 offset-1">
         <div class="position-relative">

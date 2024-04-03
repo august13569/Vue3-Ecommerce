@@ -97,6 +97,7 @@ export default {
     OrderModal,
   },
   methods: {
+    // 取得訂單
     getOrders(currentPage = 1) {
       this.currentPage = currentPage;
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/orders?page=${currentPage}`;
@@ -115,17 +116,19 @@ export default {
           });
         });
     },
+    // 開啟檢視視窗
     openModal(isNew, item) {
       this.tempOrder = { ...item };
       this.isNew = false;
       const orderComponent = this.$refs.orderModal;
       orderComponent.showModal();
     },
-    openDelOrderModal(item) {
-      this.tempOrder = { ...item };
-      const delComponent = this.$refs.delModal;
-      delComponent.showModal();
-    },
+    // openDelOrderModal(item) {
+    //   this.tempOrder = { ...item };
+    //   const delComponent = this.$refs.delModal;
+    //   delComponent.showModal();
+    // },
+    // 更新付款狀態
     updatePaid(item) {
       this.isLoading = true;
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/order/${item.id}`;
@@ -149,6 +152,7 @@ export default {
           });
         });
     },
+    // 刪除訂單
     deletOrder() {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/order/${this.delItemId}`;
       this.isLoading = true;

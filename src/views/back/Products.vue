@@ -89,6 +89,7 @@ export default {
     };
   },
   methods: {
+    // 取得產品
     getProducts(page = 1) {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/products/?page=${page}`;
       this.isLoading = true;
@@ -108,6 +109,7 @@ export default {
           });
         });
     },
+    // 開啟新增&編輯產品視窗
     openModal(isNew, item) {
       if (isNew) {
         this.tempProduct = {};
@@ -118,6 +120,7 @@ export default {
       const productComponent = this.$refs.productModal;
       productComponent.showModal();
     },
+    // 更新與新增產品
     updateProduct(item) {
       this.tempProduct = item;
       let api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product`;
@@ -150,6 +153,7 @@ export default {
           });
         });
     },
+    // 刪除產品
     removeCartItem() {
       this.isLoading = true;
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product/${this.delItemId}`;

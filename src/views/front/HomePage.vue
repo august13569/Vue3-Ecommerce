@@ -20,34 +20,6 @@
       data-bs-ride="carousel"
       touch-action="pan-y"
     >
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselBanner"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselBanner"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselBanner"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselBanner"
-          data-bs-slide-to="3"
-          aria-label="Slide 4"
-        ></button>
-      </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img
@@ -136,14 +108,14 @@
             alt="freeshipping"
             data-aos="fade-right"
             data-aos-duration="1800"
-            data-aos-offset="450"
+            :data-aos-offset="aosOffset"
           />
         </div>
         <div
           class="col-md-6 align-self-center"
           data-aos="fade-up"
           data-aos-duration="1800"
-          data-aos-offset="450"
+          :data-aos-offset="aosOffset"
         >
           <h3 class="display-5 my-5">Free Shipping</h3>
           <p class="fs-5 lh-base">
@@ -162,14 +134,14 @@
             alt="consulation"
             data-aos="fade-left"
             data-aos-duration="1800"
-            data-aos-offset="300"
+            :data-aos-offset="aosOffset - 50"
           />
         </div>
         <div
           class="col-md-6 align-self-center"
           data-aos="fade-up"
           data-aos-duration="1800"
-          data-aos-offset="300"
+          :data-aos-offset="aosOffset - 50"
         >
           <h2 class="display-5 my-5">Complimentary Consultation</h2>
           <p class="fs-5 lh-base">
@@ -187,14 +159,14 @@
             alt="warranty"
             data-aos="fade-right"
             data-aos-duration="1800"
-            data-aos-offset="450"
+            :data-aos-offset="aosOffset"
           />
         </div>
         <div
           class="col-md-6 align-self-center"
           data-aos="fade-up"
           data-aos-duration="1800"
-          data-aos-offset="450"
+          :data-aos-offset="aosOffset"
         >
           <h3 class="display-5 my-5">3 Year Warranty</h3>
           <p class="fs-5 lh-base">
@@ -242,6 +214,7 @@
 import FrontNavbar from '@/components/FrontNavbar.vue';
 import FrontFooter from '@/components/FrontFooter.vue';
 import ProductList from '@/components/HorizontalProductList.vue';
+import Carousel from 'bootstrap/js/dist/carousel';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -262,6 +235,7 @@ export default {
         type: 'All',
         name: '',
       },
+      aosOffset: window.innerWidth >= 992 ? 900 : 450,
     };
   },
   methods: {
@@ -296,12 +270,18 @@ export default {
         query: { data: type },
       });
     },
+    // 啟用輪播
+    initCarousel() {
+      const myCarousel = document.querySelector('#carouselBanner');
+      const carousel = new Carousel(myCarousel);
+    },
   },
   mounted() {
     // 彈出優惠券廣告
     setTimeout(() => {
       this.showAd = true;
     }, 3000);
+    this.initCarousel();
   },
   created() {
     this.getProducts();

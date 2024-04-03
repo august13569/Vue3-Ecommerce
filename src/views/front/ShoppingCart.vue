@@ -3,7 +3,7 @@
   <ToastMessages />
   <DeleteModal @delete-item="removeCartItem" />
   <FrontNavbar />
-  <StepsBar class="my-4" :title="stepsTitle" v-if="cart && cart.carts && cart.carts.length > 0" />
+  <StepsBar :title="stepsTitle" v-if="cart && cart.carts && cart.carts.length > 0" />
   <!-- Shopping Cart List -->
   <div class="container">
     <div class="row" style="min-height: 62vh">

@@ -1,7 +1,7 @@
 <template>
   <Loading :active="isLoading" />
   <FrontNavbar />
-  <StepsBar class="my-4" :title="stepsTitle" v-if="!order.is_paid" />
+  <StepsBar :title="stepsTitle" v-if="!order.is_paid" />
   <div class="container">
     <!-- Order Info -->
     <div class="my-5 row justify-content-center" style="min-height: 75vh">
@@ -18,14 +18,14 @@
               <td>{{ item.product.title }}</td>
               <td>{{ item.qty }}</td>
               <td>{{ item.product.unit }}</td>
-              <td>{{ item.final_total }}</td>
+              <td>${{ $filters.currency(item.final_total) }}</td>
             </tr>
           </tbody>
           <tfoot>
             <tr>
               <td colspan="2"></td>
               <td class="text-primary">Total</td>
-              <td class="text-primary">{{ order.total }}</td>
+              <td class="text-primary">${{ $filters.currency(order.total) }}</td>
             </tr>
           </tfoot>
         </table>

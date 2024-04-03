@@ -66,7 +66,6 @@
   color: white;
 }
 
-// 之後查看看，要如何從bootstrap去改這個顏色
 .nav-link.active {
   color: $primary !important;
 }
@@ -92,7 +91,7 @@
   border: none;
   outline: none;
   text-align: center;
-  width: 1.5rem;
+  width: 2.5rem;
 
   // 選擇器只針對 input type 為 number
   &[type="number"]::-webkit-inner-spin-button,
@@ -106,16 +105,3 @@
 .btn:disabled {
   border: none;
 }
-
-
-// .img-zoom {
-//     overflow: hidden;
-//     transition: transform .3s ease;
-//     background-size: cover;
-//     background-position: center center;
-
-//     &:hover {
-//         transition: .3s;
-//         transform: scale(1.05);
-//     }
-// }

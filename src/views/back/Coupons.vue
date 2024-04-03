@@ -83,6 +83,7 @@ export default {
     };
   },
   methods: {
+    // 開啟建立&編輯優惠券視窗
     openCouponModal(isNew, item) {
       this.isNew = isNew;
       if (this.isNew) {
@@ -94,11 +95,12 @@ export default {
       }
       this.$refs.couponModal.showModal();
     },
-    openDelCouponModal(item) {
-      this.tempCoupon = { ...item };
-      const delComponent = this.$refs.delModal;
-      delComponent.showModal();
-    },
+    // openDelCouponModal(item) {
+    //   this.tempCoupon = { ...item };
+    //   const delComponent = this.$refs.delModal;
+    //   delComponent.showModal();
+    // },
+    // 取得優惠券
     getCoupons() {
       this.isLoading = true;
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupons`;
@@ -115,6 +117,7 @@ export default {
           this.isLoading = false;
         });
     },
+    // 更新優惠券
     updateCoupon(tempCoupon) {
       if (this.isNew) {
         const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon`;
@@ -152,6 +155,7 @@ export default {
           });
       }
     },
+    // 刪除優惠券
     deletCoupon() {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon/${this.delItemId}`;
       this.isLoading = true;
