@@ -48,7 +48,7 @@
           placeholder="Please enter your name" rules="required"
           v-model="form.user.name"
         ></Field>
-        <ErrorMessage name="name" class="invalid-feedback"></ErrorMessage>
+        <ErrorMessage name="name" class="invalid-feedback" />
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">Email</label>
@@ -58,7 +58,7 @@
           placeholder="Please enter your email" rules="email|required"
           v-model="form.user.email"
         ></Field>
-        <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
+        <ErrorMessage name="email" class="invalid-feedback" />
       </div>
       <div class="mb-3">
         <label for="tel" class="form-label">Phone</label>
@@ -68,7 +68,7 @@
           placeholder="Please enter your phone" rules="required"
           v-model="form.user.tel"
         ></Field>
-        <ErrorMessage name="phone" class="invalid-feedback"></ErrorMessage>
+        <ErrorMessage name="phone" class="invalid-feedback" />
       </div>
     </div>
     <div class="col-md-6">
@@ -81,7 +81,7 @@
           placeholder="Please enter the message"
           rules="required"
         ></Field>
-        <ErrorMessage name="message" class="invalid-feedback"></ErrorMessage>
+        <ErrorMessage name="message" class="invalid-feedback" />
     </div>
     <div class="col-12 text-center mt-5">
       <button class="btn btn-primary btn-lg text-white mb-5" type="submit">Submit</button>

@@ -113,7 +113,7 @@ export default {
             this.order = res.data.order;
           }
         })
-        .catch((err) => {
+        .catch(() => {
           this.$emitter.emit('push-message', {
             style: 'danger',
             title: 'Something went wrong, please try again.',

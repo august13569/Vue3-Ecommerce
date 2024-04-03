@@ -18,7 +18,7 @@
             rules="email|required"
             v-model="form.user.email"
           ></Field>
-          <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
+          <ErrorMessage name="email" class="invalid-feedback" />
         </div>
         <div class="mb-3">
           <label for="name" class="form-label">Name<span class="text-danger"> *</span></label>
@@ -32,7 +32,7 @@
             rules="required"
             v-model="form.user.name"
           ></Field>
-          <ErrorMessage name="name" class="invalid-feedback"></ErrorMessage>
+          <ErrorMessage name="name" class="invalid-feedback" />
         </div>
         <div class="mb-3">
           <label for="tel" class="form-label">Phone<span class="text-danger"> *</span></label>
@@ -46,7 +46,7 @@
             rules="required"
             v-model="form.user.tel"
           ></Field>
-          <ErrorMessage name="phone" class="invalid-feedback"></ErrorMessage>
+          <ErrorMessage name="phone" class="invalid-feedback" />
         </div>
         <div class="mb-3">
           <label for="address" class="form-label">Address<span class="text-danger"> *</span></label>
@@ -60,7 +60,7 @@
             rules="required"
             v-model="form.user.address"
           ></Field>
-          <ErrorMessage name="address" class="invalid-feedback"></ErrorMessage>
+          <ErrorMessage name="address" class="invalid-feedback" />
         </div>
         <div class="mb-3">
           <label for="message" class="form-label">Note</label>
